@@ -1,0 +1,64 @@
+.container {
+   text-align: left;
+}
+
+.inputSection, .inputType {
+   display: flex;
+   flex-direction: row;
+   margin-top: 16px;
+}
+
+.inputGroup {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+/* selects the second child in inputSection */
+.inputSection > *:nth-child(2) {
+   margin-left: 8px;
+}
+
+.actions {
+   display: flex;
+   flex-direction: row;
+   margin-top: 16px;
+   width: 100%;
+   justify-content: right;
+}
+
+.actions > * {
+   margin-left: 0.5em!important;
+}
+
+.label {
+   display: block;
+   font-weight: bold;
+   color: #444;
+   padding: 0 0 0 1px;
+   margin-bottom: 0.5em;
+   font-size: calc(0.875 * 16px);
+   line-height: 1.5;
+}
+
+@media (max-width: 750px) {
+   .inputSection {
+      flex-direction: column !important;
+   }
+
+   .formInput {
+      width: 100% !important;
+   }
+
+   .inputGroup {
+      margin-left: 0 !important;
+   }
+
+   .title {
+      font-size: 24px;
+   }
+
+   .label {
+      margin-top: 1em;
+   }
+}

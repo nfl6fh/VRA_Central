@@ -1,0 +1,218 @@
+.container {
+   width: 40%;
+   margin-left: auto;
+   margin-right: auto;
+
+   text-align: left!important;
+   align-items: left!important;
+   justify-content: flex-start!important;
+
+   margin-top: 24px;
+}
+
+.pendingPage {
+   max-width: 400px!important;
+   display: flex!important;
+   text-align: center;
+}
+
+.pendingContent {
+   margin-left: auto;
+   margin-right: auto;
+   text-align: left;
+}
+
+.buttonContainer {
+   width: 100%;
+   display: flex;
+
+   justify-content: center;
+}
+
+.saveButton {
+   margin-left: auto;
+   margin-right: auto;
+
+}
+
+.verifyingTitle {
+   margin-bottom: 8px;
+   text-align: left;
+}
+
+.roleSelection {
+   padding-top: 16px;
+   padding-bottom: 16px;
+
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.roleSection {
+   margin-top: 32px;
+   margin-bottom: 32px;
+}
+
+.hasBackground {
+   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("https://virginiasports.com/imgproxy/BDy3MDCdFcJhbX01YqRRgzVgBoskNGo-ckRYDYiuF0M/fit/1420/790/ce/0/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3Zpcmdpbmlhc3BvcnRzLWNvbS8yMDIwLzA2LzUwMmYzNmMwLWJvYXRob3VzZV8xLWUxNTkxMDQxMzI5NzExLmpwZw.jpg");
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-blend-mode: saturation;
+}
+
+.container, .hasBackground {
+   height: calc(100vh - 51px);
+}
+
+.main {
+   height: calc(100vh - 56px);
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+   align-items: center;
+   justify-content: center;
+}
+
+.footer {
+   display: flex;
+   flex: 1;
+   padding: 2rem 0;
+   border-top: 1px solid #eaeaea;
+   justify-content: center;
+   align-items: center;
+}
+
+.footer a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-grow: 1;
+}
+
+.title a {
+   color: #0070f3;
+   text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+   text-decoration: underline;
+}
+
+.title {
+   margin: 0;
+   line-height: 1;
+   font-size: 4rem;
+   font-size: var(--text-size-large);
+   font-weight: 800;
+}
+
+.title,
+.description {
+   text-align: center;
+   color: var(white)
+}
+
+.description {
+   margin: 4rem 0;
+   line-height: 1.5;
+   font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+   .grid {
+      width: 100%;
+      flex-direction: column;
+   }
+}
+
+.outerDiv {
+   margin: auto;
+   width: 60%;
+}
+
+.directoryLoadingContainer,
+.epLoadingContainer {
+   cursor: pointer;
+   background-color: #ef5701;
+   border: none;
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 1.5rem;
+   padding-right: 1.5rem;
+   padding-top: 0.5rem;
+   padding-bottom: 0.5rem;
+   border-radius: 6px;
+   text-decoration: none;
+
+   margin-right: 10px;
+   margin-left: 10px;
+}
+
+.directoryLoadingContainer {
+   width: 180px;
+}
+
+.epLoadingContainer {
+   width: 126px;
+}
+
+.mainButton {
+   margin-left: 10px;
+   margin-right: 10px;
+}
+
+.mainOptions {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+
+.subtitle {
+   margin-bottom: 0;
+   margin-top: 0;
+   font-size: var(--text-size-small);
+}
+
+.title, .subtitle {
+   color: white!important;
+}
+
+.signInButton {
+   background-color: var(--orange-dark)!important;
+   color: white!important;
+}
+
+@media (max-width: 600px) {
+   .main {
+      width: 100%;
+      height: calc(100vh - 43px);
+   }
+
+   .signInButton,
+   .mainButton,
+   .directoryLoadingContainer,
+   .epLoadingContainer {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+   }
+
+   .pendingPage {
+      max-width: 95%!important;
+      width: 95%!important;
+   }
+
+   .roleSection {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+   }
+}

@@ -1,0 +1,87 @@
+.navbar {
+   color: white;
+   width: 100%;
+   background-color: #000;
+   margin: 0;
+
+   padding-top: 0.5rem;
+   padding-bottom: 0.5rem;
+   padding-right: 1rem;
+   padding-left: 1rem;
+
+   display: flex;
+   align-items: left;
+   flex-direction: row;
+   flex-wrap: nowrap;
+}
+
+.navbar > * {
+   display: flex;
+   justify-content: center;
+   cursor: pointer;
+}
+
+.navbar p,
+.navbar a {
+   padding: 0.5rem 1rem;
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
+.navbarRight {
+   margin-left: auto;
+   align-items: center;
+   justify-content: center;
+}
+
+.adminButton {
+   margin-right: auto;
+   /* color: red !important; */
+}
+
+.adminButton:hover, .navButton:hover {
+   filter: brightness(0.8);
+}
+
+.brand {
+   color: white;
+   font-weight: 800;
+   text-decoration: none;
+
+   margin-right: auto;
+}
+
+.brand:hover {
+   color: #ccc;
+}
+
+.verifiedSessionButtons {
+   flex-grow: 1;
+   cursor: default;
+}
+
+.verifiedSessionButtons > * {
+   flex-grow: 0;
+}
+
+@media (max-width: 600px) {
+   .navbar {
+      padding-left: 0;
+      padding-right: 0;
+   }
+
+   .navButton {
+      padding: 4px 8px !important;
+   }
+
+   .brand {
+      padding: 4px 8px !important;
+      width: 0px;
+      display: none;
+   }
+
+   .directory,
+   .adminButton {
+      padding-left: 8px !important;
+   }
+}

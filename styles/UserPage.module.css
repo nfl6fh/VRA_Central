@@ -1,0 +1,153 @@
+.container {
+   width: 90vw;
+   margin-left: auto;
+   margin-right: auto;
+
+   margin-top: var(--top-margin);
+   align-items: flex-end;
+}
+
+.header {
+   width: 100%;
+   display: inline-flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.name,
+.totalDue {
+   font-size: var(--text-size-large);
+}
+
+.name {
+   font-weight: bold;
+}
+
+.role {
+   font-size: var(--text-size-small);
+   margin-left: 7.5px;
+}
+
+.gradYear,
+.totalDueContainer {
+   font-size: var(--text-size-medium);
+}
+
+.gradYear,
+.totalDue {
+   margin-left: 10px;
+}
+
+.totalDueContainer {
+   display: inline-block;
+}
+
+.belowName {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.userActions {
+   display: flex;
+   margin-top: 16px;
+   margin-bottom: 16px;
+   justify-content: flex-end;
+}
+
+.userActions > * {
+   margin-left: 8px!important;
+}
+
+.adminActions > * {
+   margin-left: 8px!important;
+}
+
+.makeAdmin {
+   color: white;
+   background-color: red;
+}
+
+.updatedCol {
+    width: 100px!important;
+}
+
+.amountCol {
+    width: 95px!important;
+}
+
+.typeCol {
+    width: 100px!important;
+}
+
+.statusCol {
+    width: 100px!important;
+}
+
+.actionCol {
+   width: 120px!important;
+}
+
+@media (max-width: 1000px) {
+   .container {
+      width: 95vw;
+   }
+
+   .role {
+      display: none;
+   }
+
+   .email {
+      display: none;
+   }
+
+   .userActions {
+      width: 100%;
+   }
+
+   .totalDue, .totalDueContainer {
+      font-size: var(--text-size-small);
+   }
+
+   .name {
+      font-size: var(--text-size-medium);
+   }
+
+   .header {
+      flex-direction: column;
+   }
+
+   .userActions {
+      justify-content: flex-start!important;
+   }
+}
+
+@media (max-width: 600px) {
+   .name {
+      font-size: var(--text-size-small);
+   }
+
+   .gradYear {
+      font-size: var(--text-size-extra-small);
+   }
+
+   .totalDue, .totalDueContainer {
+      font-size: var(--text-size-extra-small);
+   }
+
+   .adminActions {
+      display: none;
+   }
+
+   .userActions > * {
+      margin-left: 0px!important;
+   }
+
+   .cell > * {
+      color: blue!important;
+   }
+
+   .description {
+      display: none;
+   }
+}
