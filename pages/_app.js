@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
    return (
       <SessionProvider session={pageProps.session} refetchInterval={0}>
          <Head>
-            <title>VRPay</title>
+            <title>VRA Central</title>
          </Head>
          {/* <GeistProvider>
             <CssBaseline /> */}
