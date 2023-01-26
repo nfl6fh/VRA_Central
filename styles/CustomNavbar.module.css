@@ -60,6 +60,10 @@
    z-index: 1;
 }
 
+.dropdown_content a:hover {
+   background-color: grey;
+}
+
 /* Links inside the dropdown */
 .dropdown_content a {
    float: none;
