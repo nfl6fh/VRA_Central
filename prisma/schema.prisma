@@ -73,6 +73,7 @@ model ExtraWorkout {
   description   String @default("")
   user          User   @relation(fields: [userId], references: [id])
   userId        String
+  date          DateTime @default(now()) @map(name: "date")
 
   createdAt DateTime @default(now()) @map(name: "created_at")
   updatedAt DateTime @updatedAt @map(name: "updated_at")
