@@ -9,18 +9,25 @@ export default function CustomNavbar(props) {
 
    return (
       <div className={styles.navbar}>
-         <Link href="/">
-            <a className={styles.brand}>
-               VRA Central
-            </a>
-         </Link>
+         <div className={styles.leftNavbar}>
+            <Link href="/">
+               <a className={styles.brand}>
+                  VRA Central
+               </a>
+            </Link>
 
-         <div className={styles.verifiedSessionButtons}>
-            {session?.role == "admin" && (
-               <Link href="/full_team">
-                  <a className={styles.adminButton}>Home</a>
-               </Link>
-            )}
+            <div className={styles.navbar1}>
+               <div className={styles.dropdown}>
+                  <button className={styles.dropbtn}>
+                     Extra Work
+                  </button>
+                  <div className={styles.dropdown_content}>
+                     <a href="/full_team">Full Team</a>
+                     <a href="/u/[id]" as={`/u/${session?.uid}`}>My Minutes</a>
+                     <a href="#">Log a Workout</a>
+                  </div>
+               </div>
+            </div>
          </div>
 
          <div className={styles.navbarRight}>

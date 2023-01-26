@@ -15,7 +15,68 @@
    flex-wrap: nowrap;
 }
 
-.navbar > * {
+/* Navbar container */
+.navbar1 {
+   overflow: hidden;
+}
+
+/* Links inside the navbar */
+.navbar1 a {
+   float: left;
+   font-size: 16px;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+   float: left;
+   overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+   font-size: 16px;
+   border: none;
+   outline: none;
+   color: white;
+   padding: 14px 16px;
+   background-color: inherit;
+   font-family: inherit;
+   /* Important for vertical align on mobile phones */
+   margin: 0;
+   /* Important for vertical align on mobile phones */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown_content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown_content a {
+   float: none;
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown_content {
+   display: block;
+}
+
+.navbar>* {
    display: flex;
    justify-content: center;
    cursor: pointer;
@@ -34,12 +95,22 @@
    justify-content: center;
 }
 
+.leftNavbar {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: left;
+   margin-right: auto;
+}
+
 .adminButton {
+   margin-left: 8px;
    margin-right: auto;
    /* color: red !important; */
 }
 
-.adminButton:hover, .navButton:hover {
+.adminButton:hover,
+.navButton:hover {
    filter: brightness(0.8);
 }
 
@@ -60,7 +131,7 @@
    cursor: default;
 }
 
-.verifiedSessionButtons > * {
+.verifiedSessionButtons>* {
    flex-grow: 0;
 }
 
