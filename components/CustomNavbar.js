@@ -23,7 +23,7 @@ export default function CustomNavbar(props) {
                   </button>
                   <div className={styles.dropdown_content}>
                      <a href="/full_team">Full Team</a>
-                     <a href="/u/[id]" as={`/u/${session?.uid}`}>My Minutes</a>
+                     <a href={`/u/${session?.uid}`}>My Minutes</a>
                      <a href="#">Log a Workout</a>
                   </div>
                </div>
