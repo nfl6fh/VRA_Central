@@ -11,12 +11,15 @@ import Router from "next/router.js"
 import { Input, Button, Modal, useModal, Table, Text, Radio } from "@geist-ui/core"
 
 export const getServerSideProps = async () => {
-   var unverified_users = await prisma.user.findMany({
-      where: { is_verified: false },
-   })
+   // var unverified_users = await prisma.user.findMany({
+   //    where: { is_verified: false },
+   // })
 
    var verified_users = await prisma.user.findMany({
       where: { is_verified: true },
+      include: {
+         extraWorkouts: true,
+      },
    })
 
    // var today = new Date();
@@ -37,13 +40,36 @@ export const getServerSideProps = async () => {
       if (user.updatedAt !== null) {
          user.updatedAt = user.updatedAt.toString()
       }
+      // iterate through user.extraWorkouts and add up the time of workouts from the past 7 days
+      var past_7_work = 0
+      user.extraWorkouts.map((workout) => {
+         if (workout.createdAt !== null) {
+            workout.createdAt = workout.createdAt.toISOString()
+         }
+         if (workout.updatedAt !== null) {
+            workout.updatedAt = workout.updatedAt.toISOString()
+         }
+         var seven_days_ago = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+         // var mm = String(seven_days_ago.getMonth() + 1).padStart(2, '0');
+         // var dd = String(seven_days_ago.getDate()).padStart(2, '0');
+         // TODO: Fix this
+         if (workout.date.getMonth() >= seven_days_ago.getMonth() && workout.date.getDate() >= seven_days_ago.getDate()) {
+            past_7_work += workout.time
+         }
+         if (workout.date !== null) {
+            workout.date = workout.date.toISOString()
+         }
+      })
+      console.log("past_7_work:", past_7_work)
+      user.past_7_work = past_7_work
    })
 
    verified_users = verified_users?.sort((a, b) => b.total_work - a.total_work)
+   const p7u = verified_users?.sort((a, b) => b.past_7_work - a.past_7_work)
 
    console.log("verified_users:", verified_users)
 
-   return { props: { verified_users } }
+   return { props: { verified_users, p7u } }
 }
 
 export default function Admin(props) {
@@ -150,23 +176,22 @@ export default function Admin(props) {
             <div className={styles.workTables}>
                <div className={styles.workTable}>
                   <h2 className={styles.sectionHeading}>Total Extra Work</h2>
-                  <Table auto data={props.verified_users}>
+                  <Table auto data={props.verified_users.sort((a, b) => b.total_work - a.total_work)}>
                      <Table.Column prop="name" label="Athlete" render={athleteName} width={width_name} />
                      <Table.Column
                         prop="total_work"
                         label="Extra Minutes"
                         render={cellText}
-                        // width={width_work}
                      >
                      </Table.Column>
                   </Table>
                </div>
                <div className={styles.workTable}>
-                  <h2 className={styles.sectionHeading}>Total Extra Work</h2>
-                  <Table auto data={props.verified_users}>
+                  <h2 className={styles.sectionHeading}>Last Week Extra Work</h2>
+                  <Table auto data={ props.p7u.sort((a, b) => b.past_7_work - a.past_7_work) }> {/*props.verified_users.sort((a, b) => b.past_7_work - a.past_7_work)}>*/}
                      <Table.Column prop="name" label="Athlete" render={athleteName} width={width_name} />
                      <Table.Column
-                        prop="total_work"
+                        prop="past_7_work"
                         label="Extra Minutes"
                         render={cellText}
                      >
